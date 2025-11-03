@@ -9,27 +9,35 @@ public class GUIForm {
 	public static AddCurrentAccount addcurrentacc= new AddCurrentAccount();
 	public static AddSavingsAccount addsavingsaccount = new AddSavingsAccount();
 	public static AddStudentAccount addstudentaccount = new AddStudentAccount();
-	public static DisplayList displaylist= new DisplayList();
-	public static DepositAcc depositacc= new DepositAcc();
-	public static WithdrawAcc withdraw = new WithdrawAcc();
+        public static DisplayList displaylist= new DisplayList();
+        public static DepositAcc depositacc= new DepositAcc();
+        public static WithdrawAcc withdraw = new WithdrawAcc();
+        public static TransferFunds transferFunds = new TransferFunds();
+        public static TransactionHistory transactionHistory = new TransactionHistory();
+        public static InsightsDashboard insightsDashboard = new InsightsDashboard();
 	
 	public static void UpdateDisplay()
 	{
 		
-		if(displaylist.isVisible())
-		{
-			Point O= displaylist.getLocation();
-			displaylist.dispose();
-			displaylist = new DisplayList();
-			displaylist.setVisible(true);
-			displaylist.setLocation(O);;
-		}
-		
-		else {
-			displaylist = new DisplayList();
-		}
-		
-	}
+                if(displaylist.isVisible())
+                {
+                        Point O= displaylist.getLocation();
+                        displaylist.dispose();
+                        displaylist = new DisplayList();
+                        displaylist.setVisible(true);
+                        displaylist.setLocation(O);;
+                }
+
+                else {
+                        displaylist = new DisplayList();
+                }
+
+                if(insightsDashboard.isVisible())
+                {
+                        insightsDashboard.refreshDataView();
+                }
+
+        }
 	
 	
 }
